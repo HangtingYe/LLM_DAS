@@ -1,0 +1,687 @@
+{
+  "defaults": {
+    "llm_type": "gemini-2.5-pro",
+    "shuffle": "False",
+    "classifier": "rf",
+    "query": 1,
+    "lambda_score": 1.0
+  },
+  "models": {
+    "PCA": {
+      "query": 2,
+      "classifier": "rf",
+      "lambda_score": 1.0,
+      "datasets": {
+        "abalone": {
+          "query": 2,
+          "lambda_score": 0.4,
+          "classifier": "rf"
+        },
+        "amazon": {
+          "query": 2,
+          "lambda_score": 0.05,
+          "classifier": "svm"
+        },
+        "annthyroid": {
+          "query": 2,
+          "lambda_score": 0.05,
+          "classifier": "svm"
+        },
+        "arrhythmia": {
+          "query": 2,
+          "lambda_score": 4.6,
+          "classifier": "svm"
+        },
+        "breastw": {
+          "query": 2,
+          "lambda_score": 2.0,
+          "classifier": "rf"
+        },
+        "campaign": {
+          "query": 2,
+          "lambda_score": 0.05,
+          "classifier": "svm"
+        },
+        "cardio": {
+          "query": 2,
+          "lambda_score": 0.2,
+          "classifier": "svm"
+        },
+        "Cardiotocography": {
+          "query": 2,
+          "lambda_score": 0.2,
+          "classifier": "svm"
+        },
+        "comm.and.crime": {
+          "query": 2,
+          "lambda_score": 0.05,
+          "classifier": "svm"
+        },
+        "fault": {
+          "query": 2,
+          "lambda_score": 0.05,
+          "classifier": "svm"
+        },
+        "glass": {
+          "query": 2,
+          "lambda_score": 6.0,
+          "classifier": "rf"
+        },
+        "Hepatitis": {
+          "query": 2,
+          "lambda_score": 0.05,
+          "classifier": "rf"
+        },
+        "imgseg": {
+          "query": 2,
+          "lambda_score": 0.2,
+          "classifier": "rf"
+        },
+        "ionosphere": {
+          "query": 2,
+          "lambda_score": 0.05,
+          "classifier": "svm"
+        },
+        "lympho": {
+          "query": 2,
+          "lambda_score": 0.05,
+          "classifier": "svm"
+        },
+        "mammography": {
+          "query": 2,
+          "lambda_score": 5.8,
+          "classifier": "rf"
+        },
+        "mnist": {
+          "query": 2,
+          "lambda_score": 0.2,
+          "classifier": "svm"
+        },
+        "musk": {
+          "query": 2,
+          "lambda_score": 0.05,
+          "classifier": "svm"
+        },
+        "optdigits": {
+          "query": 2,
+          "lambda_score": 0.05,
+          "classifier": "rf"
+        },
+        "Parkinson": {
+          "query": 2,
+          "lambda_score": 6.0,
+          "classifier": "rf"
+        },
+        "pendigits": {
+          "query": 2,
+          "lambda_score": 6.0,
+          "classifier": "rf"
+        },
+        "pima": {
+          "query": 2,
+          "lambda_score": 6.0,
+          "classifier": "rf"
+        },
+        "satellite": {
+          "query": 2,
+          "lambda_score": 6.0,
+          "classifier": "rf"
+        },
+        "satimage-2": {
+          "query": 2,
+          "lambda_score": 0.2,
+          "classifier": "svm"
+        },
+        "shuttle": {
+          "query": 2,
+          "lambda_score": 5.6,
+          "classifier": "rf"
+        },
+        "SpamBase": {
+          "query": 2,
+          "lambda_score": 0.05,
+          "classifier": "svm"
+        },
+        "speech": {
+          "query": 2,
+          "lambda_score": 6.0,
+          "classifier": "rf"
+        },
+        "thyroid": {
+          "query": 2,
+          "lambda_score": 0.05,
+          "classifier": "svm"
+        },
+        "vertebral": {
+          "query": 2,
+          "lambda_score": 0.05,
+          "classifier": "svm"
+        },
+        "vowels": {
+          "query": 2,
+          "lambda_score": 0.05,
+          "classifier": "svm"
+        },
+        "wbc": {
+          "query": 2,
+          "lambda_score": 0.05,
+          "classifier": "svm"
+        },
+        "WDBC": {
+          "query": 2,
+          "lambda_score": 0.2,
+          "classifier": "svm"
+        },
+        "Wilt": {
+          "query": 2,
+          "lambda_score": 6.0,
+          "classifier": "rf"
+        },
+        "wine": {
+          "query": 2,
+          "lambda_score": 6.0,
+          "classifier": "svm"
+        },
+        "WPBC": {
+          "query": 2,
+          "lambda_score": 0.05,
+          "classifier": "svm"
+        },
+        "yeast": {
+          "query": 2,
+          "lambda_score": 6.0,
+          "classifier": "rf"
+        }
+      }
+    },
+    "IForest": {
+      "query": 3,
+      "classifier": "rf",
+      "lambda_score": 1.0,
+      "datasets": {
+        "abalone": {
+          "query": 3,
+          "lambda_score": 0.0001
+        },
+        "amazon": {
+          "query": 3,
+          "lambda_score": 0.1
+        },
+        "annthyroid": {
+          "query": 3,
+          "lambda_score": 0.2
+        },
+        "arrhythmia": {
+          "query": 3,
+          "lambda_score": 0.2
+        },
+        "breastw": {
+          "query": 3,
+          "lambda_score": 0.0001
+        },
+        "campaign": {
+          "query": 3,
+          "lambda_score": 0.4
+        },
+        "cardio": {
+          "query": 3,
+          "lambda_score": 0.0001
+        },
+        "Cardiotocography": {
+          "query": 3,
+          "lambda_score": 0.0001
+        },
+        "comm.and.crime": {
+          "query": 3,
+          "lambda_score": 0.0001
+        },
+        "fault": {
+          "query": 3,
+          "lambda_score": 0.0001
+        },
+        "glass": {
+          "query": 3,
+          "lambda_score": 0.1
+        },
+        "Hepatitis": {
+          "query": 3,
+          "lambda_score": 0.4
+        },
+        "imgseg": {
+          "query": 3,
+          "lambda_score": 0.8
+        },
+        "ionosphere": {
+          "query": 3,
+          "lambda_score": 0.5
+        },
+        "lympho": {
+          "query": 3,
+          "lambda_score": 0.4
+        },
+        "mammography": {
+          "query": 3,
+          "lambda_score": 0.0001
+        },
+        "mnist": {
+          "query": 3,
+          "lambda_score": 0.3
+        },
+        "musk": {
+          "query": 3,
+          "lambda_score": 0.6
+        },
+        "optdigits": {
+          "query": 3,
+          "lambda_score": 0.3
+        },
+        "Parkinson": {
+          "query": 3,
+          "lambda_score": 0.0001
+        },
+        "pendigits": {
+          "query": 3,
+          "lambda_score": 0.0001
+        },
+        "pima": {
+          "query": 3,
+          "lambda_score": 0.0001
+        },
+        "satellite": {
+          "query": 3,
+          "lambda_score": 0.1
+        },
+        "satimage-2": {
+          "query": 3,
+          "lambda_score": 0.1
+        },
+        "shuttle": {
+          "query": 3,
+          "lambda_score": 0.6
+        },
+        "SpamBase": {
+          "query": 3,
+          "lambda_score": 0.1
+        },
+        "speech": {
+          "query": 3,
+          "lambda_score": 3.0
+        },
+        "thyroid": {
+          "query": 3,
+          "lambda_score": 0.0001
+        },
+        "vertebral": {
+          "query": 3,
+          "lambda_score": 3.0
+        },
+        "vowels": {
+          "query": 3,
+          "lambda_score": 3.0
+        },
+        "wbc": {
+          "query": 3,
+          "lambda_score": 0.2
+        },
+        "WDBC": {
+          "query": 3,
+          "lambda_score": 0.0001
+        },
+        "Wilt": {
+          "query": 3,
+          "lambda_score": 3.0
+        },
+        "wine": {
+          "query": 3,
+          "lambda_score": 3.0
+        },
+        "WPBC": {
+          "query": 3,
+          "lambda_score": 0.0001
+        },
+        "yeast": {
+          "query": 3,
+          "lambda_score": 3.0
+        }
+      }
+    },
+    "OCSVM": {
+      "query": 1,
+      "classifier": "rf",
+      "lambda_score": 1.0,
+      "datasets": {
+        "abalone": {
+          "query": 1,
+          "lambda_score": 0.2,
+          "classifier": "rf"
+        },
+        "amazon": {
+          "query": 1,
+          "lambda_score": 6.0,
+          "classifier": "svm"
+        },
+        "annthyroid": {
+          "query": 1,
+          "lambda_score": 6.0,
+          "classifier": "rf"
+        },
+        "arrhythmia": {
+          "query": 1,
+          "lambda_score": 0.05,
+          "classifier": "rf"
+        },
+        "breastw": {
+          "query": 1,
+          "lambda_score": 0.05,
+          "classifier": "rf"
+        },
+        "campaign": {
+          "query": 1,
+          "lambda_score": 0.05,
+          "classifier": "rf"
+        },
+        "cardio": {
+          "query": 1,
+          "lambda_score": 0.05,
+          "classifier": "svm"
+        },
+        "Cardiotocography": {
+          "query": 1,
+          "lambda_score": 6.0,
+          "classifier": "rf"
+        },
+        "comm.and.crime": {
+          "query": 1,
+          "lambda_score": 0.05,
+          "classifier": "svm"
+        },
+        "fault": {
+          "query": 1,
+          "lambda_score": 0.05,
+          "classifier": "svm"
+        },
+        "glass": {
+          "query": 1,
+          "lambda_score": 6.0,
+          "classifier": "svm"
+        },
+        "Hepatitis": {
+          "query": 1,
+          "lambda_score": 0.2,
+          "classifier": "rf"
+        },
+        "imgseg": {
+          "query": 1,
+          "lambda_score": 0.2,
+          "classifier": "svm"
+        },
+        "ionosphere": {
+          "query": 1,
+          "lambda_score": 0.05,
+          "classifier": "svm"
+        },
+        "lympho": {
+          "query": 1,
+          "lambda_score": 0.8,
+          "classifier": "rf"
+        },
+        "mammography": {
+          "query": 1,
+          "lambda_score": 6.0,
+          "classifier": "rf"
+        },
+        "mnist": {
+          "query": 1,
+          "lambda_score": 0.2,
+          "classifier": "rf"
+        },
+        "musk": {
+          "query": 1,
+          "lambda_score": 0.2,
+          "classifier": "svm"
+        },
+        "optdigits": {
+          "query": 1,
+          "lambda_score": 0.05,
+          "classifier": "rf"
+        },
+        "Parkinson": {
+          "query": 1,
+          "lambda_score": 0.05,
+          "classifier": "svm"
+        },
+        "pendigits": {
+          "query": 1,
+          "lambda_score": 1.8,
+          "classifier": "rf"
+        },
+        "pima": {
+          "query": 1,
+          "lambda_score": 0.2,
+          "classifier": "rf"
+        },
+        "satellite": {
+          "query": 1,
+          "lambda_score": 0.05,
+          "classifier": "rf"
+        },
+        "satimage-2": {
+          "query": 1,
+          "lambda_score": 0.2,
+          "classifier": "rf"
+        },
+        "shuttle": {
+          "query": 1,
+          "lambda_score": 0.2,
+          "classifier": "rf"
+        },
+        "SpamBase": {
+          "query": 1,
+          "lambda_score": 0.05,
+          "classifier": "rf"
+        },
+        "speech": {
+          "query": 1,
+          "lambda_score": 6.0,
+          "classifier": "rf"
+        },
+        "thyroid": {
+          "query": 1,
+          "lambda_score": 0.8,
+          "classifier": "rf"
+        },
+        "vertebral": {
+          "query": 1,
+          "lambda_score": 6.0,
+          "classifier": "svm"
+        },
+        "vowels": {
+          "query": 1,
+          "lambda_score": 0.05,
+          "classifier": "svm"
+        },
+        "wbc": {
+          "query": 1,
+          "lambda_score": 0.05,
+          "classifier": "svm"
+        },
+        "WDBC": {
+          "query": 1,
+          "lambda_score": 0.2,
+          "classifier": "rf"
+        },
+        "Wilt": {
+          "query": 1,
+          "lambda_score": 0.05,
+          "classifier": "svm"
+        },
+        "wine": {
+          "query": 1,
+          "lambda_score": 0.05,
+          "classifier": "svm"
+        },
+        "WPBC": {
+          "query": 1,
+          "lambda_score": 0.05,
+          "classifier": "svm"
+        },
+        "yeast": {
+          "query": 1,
+          "lambda_score": 6.0,
+          "classifier": "rf"
+        }
+      }
+    },
+    "ECOD": {
+      "query": 3,
+      "classifier": "rf",
+      "lambda_score": 1.0,
+      "datasets": {
+        "abalone": {
+          "query": 3,
+          "lambda_score": 0.0001
+        },
+        "amazon": {
+          "query": 3,
+          "lambda_score": 0.3
+        },
+        "annthyroid": {
+          "query": 3,
+          "lambda_score": 0.0001
+        },
+        "arrhythmia": {
+          "query": 3,
+          "lambda_score": 0.0001
+        },
+        "breastw": {
+          "query": 3,
+          "lambda_score": 0.0001
+        },
+        "campaign": {
+          "query": 3,
+          "lambda_score": 0.1
+        },
+        "cardio": {
+          "query": 3,
+          "lambda_score": 0.1
+        },
+        "Cardiotocography": {
+          "query": 3,
+          "lambda_score": 0.0001
+        },
+        "comm.and.crime": {
+          "query": 3,
+          "lambda_score": 0.4
+        },
+        "fault": {
+          "query": 3,
+          "lambda_score": 3.0
+        },
+        "glass": {
+          "query": 3,
+          "lambda_score": 0.0001
+        },
+        "Hepatitis": {
+          "query": 3,
+          "lambda_score": 1.9
+        },
+        "imgseg": {
+          "query": 3,
+          "lambda_score": 1.4
+        },
+        "ionosphere": {
+          "query": 3,
+          "lambda_score": 0.3
+        },
+        "lympho": {
+          "query": 3,
+          "lambda_score": 0.1
+        },
+        "mammography": {
+          "query": 3,
+          "lambda_score": 0.1
+        },
+        "mnist": {
+          "query": 3,
+          "lambda_score": 3.0
+        },
+        "musk": {
+          "query": 3,
+          "lambda_score": 0.1
+        },
+        "optdigits": {
+          "query": 3,
+          "lambda_score": 0.0001
+        },
+        "Parkinson": {
+          "query": 3,
+          "lambda_score": 0.0001
+        },
+        "pendigits": {
+          "query": 3,
+          "lambda_score": 0.1
+        },
+        "pima": {
+          "query": 3,
+          "lambda_score": 0.0001
+        },
+        "satellite": {
+          "query": 3,
+          "lambda_score": 0.6
+        },
+        "satimage-2": {
+          "query": 3,
+          "lambda_score": 0.3
+        },
+        "shuttle": {
+          "query": 3,
+          "lambda_score": 1.5
+        },
+        "SpamBase": {
+          "query": 3,
+          "lambda_score": 3.0
+        },
+        "speech": {
+          "query": 3,
+          "lambda_score": 3.0
+        },
+        "thyroid": {
+          "query": 3,
+          "lambda_score": 0.0001
+        },
+        "vertebral": {
+          "query": 3,
+          "lambda_score": 3.0
+        },
+        "vowels": {
+          "query": 3,
+          "lambda_score": 3.0
+        },
+        "wbc": {
+          "query": 3,
+          "lambda_score": 0.1
+        },
+        "WDBC": {
+          "query": 3,
+          "lambda_score": 0.0001
+        },
+        "Wilt": {
+          "query": 3,
+          "lambda_score": 1.3
+        },
+        "wine": {
+          "query": 3,
+          "lambda_score": 0.0001
+        },
+        "WPBC": {
+          "query": 3,
+          "lambda_score": 3.0
+        },
+        "yeast": {
+          "query": 3,
+          "lambda_score": 3.0
+        }
+      }
+    }
+  }
+}

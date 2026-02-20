@@ -1,0 +1,18 @@
+{
+  "note": "Extracted from Table 4/5 average rows in the paper PDF text (pdftotext).",
+  "AUC-PR": {
+    "PCA+LLM-DAS": 0.638,
+    "IForest+LLM-DAS": 0.634,
+    "OCSVM+LLM-DAS": 0.602,
+    "ECOD+LLM-DAS": 0.589,
+    "DRL+LLM-DAS": 0.785
+  },
+  "AUC-ROC": {
+    "PCA+LLM-DAS": 0.767,
+    "IForest+LLM-DAS": 0.794,
+    "OCSVM+LLM-DAS": 0.758,
+    "ECOD+LLM-DAS": 0.745,
+    "DRL+LLM-DAS": 0.878
+  }
+}
+

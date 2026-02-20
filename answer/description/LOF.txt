@@ -1,0 +1,15 @@
+Local Outlier Factor (LOF) is a density-based anomaly detection algorithm that assigns an outlier score to each data point based on how isolated it is relative to its local neighbors. Unlike global methods, LOF considers the local density deviation of a point compared to its k-nearest neighbors, making it effective for detecting outliers in datasets where normal instances may have varying densities. A point with significantly lower density than its neighbors will have a high LOF score, indicating it is an outlier.
+
+The main steps of <LOF> for anomaly detection are:
+
+* Step 1. For each data point in the dataset, compute the k-distance, which is the distance to its k-th nearest neighbor.
+
+* Step 2. For each data point, determine its k-distance neighborhood, which includes all points within the k-distance.
+
+* Step 3. For each data point, calculate the reachability distance to every other point, defined as the maximum of the actual distance between the two points and the k-distance of the second point.
+
+* Step 4. For each data point, compute its local reachability density (LRD), which is the inverse of the average reachability distance from the point to all points in its k-distance neighborhood.
+
+* Step 5. For each data point, calculate the Local Outlier Factor (LOF) score by comparing its LRD with the LRDs of its neighbors; specifically, take the average ratio of the LRDs of the neighbors to the LRD of the point itself.
+
+* Step 6. Identify anomalies as points whose LOF score exceeds a predefined threshold, with scores significantly greater than 1 indicating outliers.

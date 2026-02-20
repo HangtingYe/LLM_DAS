@@ -1,0 +1,50 @@
+You are an expert in anomaly detection systems. The training set contains only normal samples. We use a LOF detector, where the anomaly score is computed using model.predict\_score(). The higher the score, the more anomalous the sample. 
+
+# The description of LOF.
+Local Outlier Factor (LOF) is a density-based anomaly detection algorithm that assigns an outlier score to each data point based on how isolated it is relative to its local neighbors. Unlike global methods, LOF considers the local density deviation of a point compared to its k-nearest neighbors, making it effective for detecting outliers in datasets where normal instances may have varying densities. A point with significantly lower density than its neighbors will have a high LOF score, indicating it is an outlier.
+
+The main steps of <LOF> for anomaly detection are:
+
+* Step 1. For each data point in the dataset, compute the k-distance, which is the distance to its k-th nearest neighbor.
+
+* Step 2. For each data point, determine its k-distance neighborhood, which includes all points within the k-distance.
+
+* Step 3. For each data point, calculate the reachability distance to every other point, defined as the maximum of the actual distance between the two points and the k-distance of the second point.
+
+* Step 4. For each data point, compute its local reachability density (LRD), which is the inverse of the average reachability distance from the point to all points in its k-distance neighborhood.
+
+* Step 5. For each data point, calculate the Local Outlier Factor (LOF) score by comparing its LRD with the LRDs of its neighbors; specifically, take the average ratio of the LRDs of the neighbors to the LRD of the point itself.
+
+* Step 6. Identify anomalies as points whose LOF score exceeds a predefined threshold, with scores significantly greater than 1 indicating outliers.
+
+# Objective
+Your task is to write a Python function generate\_hard\_anomalies(...) that generates anomalies which are the most difficult for the LOF detector to detect. This means that you the generated anomalies should have relatively low anomaly score, thus they are hard to be detected. But these anomalies are helpful to build a more robust detector. After the Python function is completed, users can provide the function with:
+
+* A trained LOF model (model) that exposes predict\_score(),
+
+* The training samples (X_train)
+
+# Requirements:
+Your should strictly follow below requirements:
+
+1. You must use your expertise to give anomalies generation policies that are specific designed for LOF, not a model-agnostic policy.
+
+2. Generated samples should have as low a score as possible from model.predict\_score(). To achieve it, you can first find the set of ‘borderline’ normal training samples based on your unique and professional understanding to LOF, not only based on the anomaly score. Then transform them to anomalies that is tailor-designed for LOF. Please note that the transformation function should be specific for LOF, which means that it is not a general transformation for other detectors.
+
+3. For the model, you can only use the function model.predict\_score.
+
+4. Use NumPy to generate the samples, and output an array of shape (n\_samples, d). And it should generate anomalies as much as I want.
+
+5. The function should allow setting:
+
+    * the number of samples (n_samples),
+
+    * the trained LOF model (model),
+    
+    * training samples (X_train).
+
+    Thus the function format is generate\_hard\_anomalies(n_samples: int, model, X_train: np.ndarray)
+
+6. All package imports must be done inside the function.
+    
+Return only the complete Python function generate\_hard\_anomalies(...), with policy you used for genenrating anomalies and clear comments explaining key steps.

@@ -1,0 +1,42 @@
+You are an expert in anomaly detection systems. The training set contains only normal samples. We use a OCSVM detector, where the anomaly score is computed using model.predict_score(). The higher the score, the more anomalous the sample.
+
+# The description of OCSVM.
+One-Class Support Vector Machine (OCSVM) is a kernel-based anomaly detection method that learns a decision boundary around normal data. It maps the input data into a high-dimensional feature space using a kernel function, then finds the smallest region (a hyperplane or hypersphere) that encloses most of the normal samples. The assumption is that normal data lies in a dense region, while anomalies fall outside this boundary. OCSVM is particularly effective when the training set contains only normal samples, as it explicitly models the support of the normal data distribution.
+
+The main steps of One-Class SVM (OCSVM) for anomaly detection are:
+
+* Map the training samples into a high-dimensional feature space using a kernel function (commonly RBF).
+* Solve an optimization problem to find a hyperplane that maximizes the separation between the origin and the mapped data, while allowing a small fraction of training points to fall outside (controlled by parameter ν).
+* Determine the decision boundary that encloses most training data in the feature space.
+* For each new sample, compute its distance to the decision boundary.
+* Assign an anomaly score: samples outside the boundary receive higher scores (more anomalous), while samples inside are considered normal.
+
+# Objective
+Your task is to write a Python function generate_hard_anomalies(...) that generates anomalies which are the most difficult for the OCSVM detector to detect. This means that the generated anomalies should have relatively low anomaly score, thus they are hard to be detected. But these anomalies are helpful to build a more robust detector. After the Python function is completed, users can provide the function with:
+
+* A trained OCSVM model (model) that exposes predict_score(),
+
+* The training samples (X_train)
+
+# Requirements:
+Your should strictly follow below requirements:
+
+1. You must use your expertise to give anomalies generation policies that are specifically designed for OCSVM, not a model-agnostic policy.
+
+2. Generated samples should have as low a score as possible from model.predict_score(). To achieve it, you can first find the set of borderline normal training samples based on your unique and professional understanding of OCSVM, not only based on the anomaly score. Then transform them to anomalies that are tailor-designed for OCSVM. Please note that the transformation should be specific to OCSVM, not a general transformation for other detectors.
+
+3. For the model, you can only use the function model.predict_score.
+
+4. Use NumPy to generate the samples, and output an array of shape (n_samples, d). It should generate as many anomalies as requested.
+
+5. The function should allow setting:
+   * the number of samples (n_samples),
+   * the trained OCSVM model (model),
+   * training samples (X_train).
+
+   Thus the function format is generate_hard_anomalies(n_samples: int, model, X_train: np.ndarray)
+
+6. All package imports must be done inside the function.
+
+Return only the complete Python function generate_hard_anomalies(...), with the policy used for generating anomalies and clear comments explaining key steps.
+

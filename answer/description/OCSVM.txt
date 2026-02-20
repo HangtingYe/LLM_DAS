@@ -1,0 +1,9 @@
+One-Class Support Vector Machine (OCSVM) is a kernel-based anomaly detection method that learns a decision boundary around normal data. It maps the input data into a high-dimensional feature space using a kernel function, then finds the smallest region (a hyperplane or hypersphere) that encloses most of the normal samples. The assumption is that normal data lies in a dense region, while anomalies fall outside this boundary. OCSVM is particularly effective when the training set contains only normal samples, as it explicitly models the support of the normal data distribution.
+
+The main steps of One-Class SVM (OCSVM) for anomaly detection are:
+
+* Map the training samples into a high-dimensional feature space using a kernel function (commonly RBF).
+* Solve an optimization problem to find a hyperplane that maximizes the separation between the origin and the mapped data, while allowing a small fraction of training points to fall outside (controlled by parameter ν).
+* Determine the decision boundary that encloses most training data in the feature space.
+* For each new sample, compute its distance to the decision boundary.
+* Assign an anomaly score: samples outside the boundary receive higher scores (more anomalous), while samples inside are considered normal.

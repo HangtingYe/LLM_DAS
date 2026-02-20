@@ -1,0 +1,42 @@
+You are an expert in anomaly detection systems. The training set contains only normal samples. We use a IForest detector, where the anomaly score is computed using model.predict_score(). The higher the score, the more anomalous the sample.
+
+# The description of IForest.
+Isolation Forest (IForest) is an ensemble-based anomaly detection method that isolates anomalies instead of profiling normal data points. The key intuition is that anomalies are few and different, so they are easier to isolate using random partitions. IForest builds multiple random binary trees (isolation trees) by recursively splitting data based on randomly chosen features and split values. Data points that require fewer splits to be isolated are more likely to be anomalies, while normal points typically require more splits. The average path length across trees is used to compute an anomaly score, where shorter paths indicate higher anomaly likelihood.
+
+The main steps of Isolation Forest (IForest) for anomaly detection are:
+
+* Randomly select a subsample of the training data to build each tree.
+* For each tree, recursively split the data by choosing a random feature and a random split value within its range, until the data is isolated or the maximum tree depth is reached.
+* For each sample, compute its path length (the number of splits required for isolation) in every tree.
+* Average the path lengths across all trees and normalize them to compute the anomaly score.
+* Classify samples as anomalies if their score exceeds a chosen threshold (higher score → more anomalous).
+
+# Objective
+Your task is to write a Python function generate_hard_anomalies(...) that generates anomalies which are the most difficult for the IForest detector to detect. This means that the generated anomalies should have relatively low anomaly score, thus they are hard to be detected. But these anomalies are helpful to build a more robust detector. After the Python function is completed, users can provide the function with:
+
+* A trained IForest model (model) that exposes predict_score(),
+
+* The training samples (X_train)
+
+# Requirements:
+Your should strictly follow below requirements:
+
+1. You must use your expertise to give anomalies generation policies that are specifically designed for IForest, not a model-agnostic policy.
+
+2. Generated samples should have as low a score as possible from model.predict_score(). To achieve it, you can first find the set of borderline normal training samples based on your unique and professional understanding of IForest, not only based on the anomaly score. Then transform them to anomalies that are tailor-designed for IForest. Please note that the transformation should be specific to IForest, not a general transformation for other detectors.
+
+3. For the model, you can only use the function model.predict_score.
+
+4. Use NumPy to generate the samples, and output an array of shape (n_samples, d). It should generate as many anomalies as requested.
+
+5. The function should allow setting:
+   * the number of samples (n_samples),
+   * the trained IForest model (model),
+   * training samples (X_train).
+
+   Thus the function format is generate_hard_anomalies(n_samples: int, model, X_train: np.ndarray)
+
+6. All package imports must be done inside the function.
+
+Return only the complete Python function generate_hard_anomalies(...), with the policy used for generating anomalies and clear comments explaining key steps.
+

@@ -1,0 +1,19 @@
+Principal Component Analysis (PCA) is a commonly used method for dimensionality reduction and anomaly detection. It identifies directions in the data (called principal components) along which the variance is maximized. In anomaly detection, PCA can be used to reconstruct each sample from the top principal components and compute the reconstruction error as the anomaly score. Samples with higher reconstruction error are considered more anomalous.
+
+The main steps of PCA for anomaly detection are:
+
+* Compute the mean of the training data.
+
+* Subtract the mean from each sample to center the data.
+
+* Compute the covariance matrix of the centered data.
+
+* Perform eigen-decomposition on the covariance matrix to obtain eigenvectors and eigenvalues.
+
+* Select the top eigenvectors corresponding to the largest eigenvalues to serve as the principal components.
+
+* Project each sample onto the principal components and reconstruct it.
+
+* Compute the reconstruction error for each sample as the anomaly score.
+
+* Rank samples by their anomaly scores to detect anomalies.

@@ -1,0 +1,9 @@
+Isolation Forest (IForest) is an ensemble-based anomaly detection method that isolates anomalies instead of profiling normal data points. The key intuition is that anomalies are few and different, so they are easier to isolate using random partitions. IForest builds multiple random binary trees (isolation trees) by recursively splitting data based on randomly chosen features and split values. Data points that require fewer splits to be isolated are more likely to be anomalies, while normal points typically require more splits. The average path length across trees is used to compute an anomaly score, where shorter paths indicate higher anomaly likelihood.
+
+The main steps of Isolation Forest (IForest) for anomaly detection are:
+
+* Randomly select a subsample of the training data to build each tree.
+* For each tree, recursively split the data by choosing a random feature and a random split value within its range, until the data is isolated or the maximum tree depth is reached.
+* For each sample, compute its path length (the number of splits required for isolation) in every tree.
+* Average the path lengths across all trees and normalize them to compute the anomaly score.
+* Classify samples as anomalies if their score exceeds a chosen threshold (higher score → more anomalous).

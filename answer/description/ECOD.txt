@@ -1,0 +1,9 @@
+ECOD (Empirical Cumulative Distribution-based Outlier Detection) is a lightweight, univariate anomaly detection method that leverages the empirical cumulative distribution (ECDF) of each feature independently. It computes how extreme a value is relative to the distribution of that feature by evaluating its position in the ECDF. The core idea is that anomalous values often lie in the tails of the distribution. ECOD combines the tail probabilities across all features to produce an overall anomaly score, without assuming any parametric distribution. This makes it simple, interpretable, and effective for high-dimensional tabular data with only normal samples for training.
+
+The main steps of ECOD for anomaly detection are:
+
+* For each feature, compute the empirical cumulative distribution function (ECDF) using the training data.
+* For each new sample, calculate the left-tail and right-tail probabilities for each feature based on its ECDF.
+* Determine the tail probability for each feature as the minimum of left-tail and right-tail probabilities, capturing extremeness in either direction.
+* Aggregate the per-feature tail probabilities into a single anomaly score, often by averaging or summing across features.
+* Assign an anomaly label or score: higher scores indicate greater deviation from the normal feature distributions, signaling potential anomalies.

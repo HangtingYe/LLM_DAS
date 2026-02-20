@@ -1,0 +1,42 @@
+You are an expert in anomaly detection systems. The training set contains only normal samples. We use a ECOD detector, where the anomaly score is computed using model.predict_score(). The higher the score, the more anomalous the sample.
+
+# The description of ECOD.
+ECOD (Empirical Cumulative Distribution-based Outlier Detection) is a lightweight, univariate anomaly detection method that leverages the empirical cumulative distribution (ECDF) of each feature independently. It computes how extreme a value is relative to the distribution of that feature by evaluating its position in the ECDF. The core idea is that anomalous values often lie in the tails of the distribution. ECOD combines the tail probabilities across all features to produce an overall anomaly score, without assuming any parametric distribution. This makes it simple, interpretable, and effective for high-dimensional tabular data with only normal samples for training.
+
+The main steps of ECOD for anomaly detection are:
+
+* For each feature, compute the empirical cumulative distribution function (ECDF) using the training data.
+* For each new sample, calculate the left-tail and right-tail probabilities for each feature based on its ECDF.
+* Determine the tail probability for each feature as the minimum of left-tail and right-tail probabilities, capturing extremeness in either direction.
+* Aggregate the per-feature tail probabilities into a single anomaly score, often by averaging or summing across features.
+* Assign an anomaly label or score: higher scores indicate greater deviation from the normal feature distributions, signaling potential anomalies.
+
+# Objective
+Your task is to write a Python function generate_hard_anomalies(...) that generates anomalies which are the most difficult for the ECOD detector to detect. This means that the generated anomalies should have relatively low anomaly score, thus they are hard to be detected. But these anomalies are helpful to build a more robust detector. After the Python function is completed, users can provide the function with:
+
+* A trained ECOD model (model) that exposes predict_score(),
+
+* The training samples (X_train)
+
+# Requirements:
+Your should strictly follow below requirements:
+
+1. You must use your expertise to give anomalies generation policies that are specifically designed for ECOD, not a model-agnostic policy.
+
+2. Generated samples should have as low a score as possible from model.predict_score(). To achieve it, you can first find the set of borderline normal training samples based on your unique and professional understanding of ECOD, not only based on the anomaly score. Then transform them to anomalies that are tailor-designed for ECOD. Please note that the transformation should be specific to ECOD, not a general transformation for other detectors.
+
+3. For the model, you can only use the function model.predict_score.
+
+4. Use NumPy to generate the samples, and output an array of shape (n_samples, d). It should generate as many anomalies as requested.
+
+5. The function should allow setting:
+   * the number of samples (n_samples),
+   * the trained ECOD model (model),
+   * training samples (X_train).
+
+   Thus the function format is generate_hard_anomalies(n_samples: int, model, X_train: np.ndarray)
+
+6. All package imports must be done inside the function.
+
+Return only the complete Python function generate_hard_anomalies(...), with the policy used for generating anomalies and clear comments explaining key steps.
+

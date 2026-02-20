@@ -1,0 +1,8 @@
+You are an expert in anomaly detection systems. The training set contains only normal samples. I will provide you the <LOF>. Please return a description of this detector, and the pseudo code of the algorithm (step1, step2,…). The answer format for another detector is: 
+# Here you should provide one paragraph for description
+The main steps of <detector type> for anomaly detection are:
+# Here you should provide the main steps for this algorithm
+* xxx. 
+* xxx. 
+* xxx. 
+...
