@@ -22,10 +22,8 @@ def generate_hard_anomalies(n_samples: int, model, X_train: np.ndarray):
     The policy consists of two main steps:
 
     1.  Identify 'Borderline' Normal Samples:
-        Instead of just picking normal samples with high scores, we define "borderline" in a
-        way that is specific to the IForest's mechanism. These are the normal training samples
-        that lie on the fringe or edge of the dense data cloud. The IForest model is already
-        less certain about these points, assigning them the highest anomaly scores among all
+        These are the normal training samples that lie on the fringe or edge of the dense data cloud. 
+        The IForest model is already less certain about these points, assigning them the highest anomaly scores among all
         normal samples. They serve as perfect "seeds" for our hard anomalies because they
         are already close to the decision boundary. We identify these by finding the training
         samples in the top percentile of anomaly scores.
