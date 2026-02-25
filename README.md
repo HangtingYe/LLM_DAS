@@ -4,7 +4,7 @@
 Links: [<a href="https://arxiv.org/abs/2510.03904">arXiv</a>][<a href="https://openreview.net/pdf?id=5rV8ML7Q3r">OpenReview</a>]
 </h1>
 
-This repository reproduces baseline and `base + LLM-DAS` results (Table 4 style) on tabular anomaly detection datasets.
+This repository reproduces baseline and `base + LLM-DAS (our proposed method)` results (Table 4 style) on tabular anomaly detection datasets.
 
 ## 0. Read This First: Which path should I run?
 
