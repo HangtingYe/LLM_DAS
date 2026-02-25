@@ -1,4 +1,8 @@
-# LLM_DAS (LLM-DAS Reproduction)
+<h1 align="center">
+[ICLR 2026]LLM as an Algorithmist: Enhancing Anomaly Detectors via Programmatic Synthesis
+  
+Links: [<a href="https://arxiv.org/abs/2510.03904">arXiv</a>][<a href="https://openreview.net/pdf?id=5rV8ML7Q3r">OpenReview</a>]
+</h1>
 
 This repository reproduces baseline and `base + LLM-DAS` results (Table 4 style) on tabular anomaly detection datasets.
 
